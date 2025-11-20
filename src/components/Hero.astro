@@ -15,22 +15,22 @@
 
   <!-- Content - Clean and Spacious -->
   <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
-    <div class="mb-16">
-      <h1 class="text-5xl md:text-7xl lg:text-8xl font-display text-neon-cyan mb-6 tracking-tight">
+    <div class="mb-8 md:mb-16">
+      <h1 class="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-display text-neon-cyan mb-4 md:mb-6 tracking-tight">
         ATILA LIMA
       </h1>
-      <div class="h-px w-32 mx-auto bg-gradient-to-r from-transparent via-neon-cyan to-transparent mb-8"></div>
+      <div class="h-px w-24 md:w-32 mx-auto bg-gradient-to-r from-transparent via-neon-cyan to-transparent mb-6 md:mb-8"></div>
     </div>
 
-    <p class="text-xl md:text-2xl text-gray-400 mb-16 font-mono max-w-2xl mx-auto leading-relaxed">
+    <p class="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 mb-10 md:mb-16 font-mono max-w-2xl mx-auto leading-relaxed px-4">
       Software Engineer <span class="text-neon-purple">•</span> Full-Stack Developer
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-      <a href="#about" class="neon-button px-10 py-4 font-mono">
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center px-4">
+      <a href="#about" class="neon-button w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 font-mono text-sm md:text-base">
         View Work
       </a>
-      <a href="#contact" class="px-10 py-4 border border-gray-700 text-gray-400 hover:border-neon-cyan hover:text-neon-cyan transition-all font-mono rounded">
+      <a href="#contact" class="w-full sm:w-auto px-8 md:px-10 py-3 md:py-4 border border-gray-700 text-gray-400 hover:border-neon-cyan hover:text-neon-cyan transition-all font-mono rounded text-sm md:text-base">
         Get In Touch
       </a>
     </div>
@@ -48,7 +48,8 @@
   /* 3D Moon Animation */
   .moon-container {
     perspective: 1000px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
     height: 400px;
     position: relative;
   }
@@ -115,15 +116,22 @@
   /* Make moon responsive */
   @media (max-width: 768px) {
     .moon-container {
-      width: 280px;
+      max-width: 280px;
       height: 280px;
     }
   }
 
   @media (max-width: 480px) {
     .moon-container {
-      width: 220px;
+      max-width: 220px;
       height: 220px;
+    }
+  }
+
+  @media (max-width: 360px) {
+    .moon-container {
+      max-width: 180px;
+      height: 180px;
     }
   }
 </style>
