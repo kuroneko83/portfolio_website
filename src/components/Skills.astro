@@ -1,0 +1,190 @@
+---
+// Skills Component - Cyberpunk Chip Design
+const skillCategories = [
+  {
+    category: "FRONTEND",
+    color: "pink",
+    skills: [
+      { name: "HTML", level: 95 },
+      { name: "CSS/Tailwind", level: 90 },
+      { name: "JavaScript", level: 92 },
+      { name: "TypeScript", level: 88 },
+      { name: "React", level: 90 },
+      { name: "Astro", level: 85 },
+    ]
+  },
+  {
+    category: "BACKEND",
+    color: "cyan",
+    skills: [
+      { name: "Node.js", level: 88 },
+      { name: "Python", level: 85 },
+      { name: "PostgreSQL", level: 82 },
+      { name: "MongoDB", level: 80 },
+      { name: "REST APIs", level: 90 },
+      { name: "GraphQL", level: 78 },
+    ]
+  },
+  {
+    category: "TOOLS & OTHER",
+    color: "purple",
+    skills: [
+      { name: "Git", level: 92 },
+      { name: "Docker", level: 80 },
+      { name: "AWS", level: 75 },
+      { name: "Flutter", level: 70 },
+      { name: "Linux", level: 85 },
+      { name: "CI/CD", level: 78 },
+    ]
+  }
+];
+---
+
+<section class="relative py-24 px-4" id="skills">
+  <div class="max-w-7xl mx-auto">
+    <!-- Section Header -->
+    <div class="mb-16 text-center">
+      <h2 class="text-5xl md:text-6xl font-display neon-text-purple mb-4 glitch" data-text="TECH.STACK">
+        TECH.STACK
+      </h2>
+      <div class="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
+      <p class="mt-6 text-gray-400 font-mono">// INSTALLED MODULES</p>
+    </div>
+
+    <!-- Skills Grid -->
+    <div class="grid md:grid-cols-3 gap-8 mb-16">
+      {skillCategories.map((category) => (
+        <div class="cyber-card p-6">
+          <!-- Category Header -->
+          <div class="mb-6 pb-4 border-b border-neon-{category.color}/30">
+            <h3 class={`text-2xl font-cyber neon-text-${category.color} mb-2`}>
+              {category.category}
+            </h3>
+            <div class="flex items-center gap-2">
+              <div class={`w-2 h-2 rounded-full bg-neon-${category.color} animate-pulse`}></div>
+              <span class="text-xs text-gray-500 font-mono">ACTIVE</span>
+            </div>
+          </div>
+
+          <!-- Skills Chips -->
+          <div class="space-y-4">
+            {category.skills.map((skill) => (
+              <div class="group">
+                <!-- Skill Name and Level -->
+                <div class="flex justify-between items-center mb-2">
+                  <span class="font-mono text-sm text-gray-300 group-hover:neon-text-{category.color} transition-colors">
+                    {skill.name}
+                  </span>
+                  <span class={`text-xs font-mono neon-text-${category.color}`}>
+                    {skill.level}%
+                  </span>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="relative h-2 bg-cyber-gray rounded-full overflow-hidden">
+                  <div
+                    class={`absolute top-0 left-0 h-full bg-neon-${category.color} transition-all duration-1000 ease-out group-hover:animate-glow`}
+                    style={`width: ${skill.level}%; box-shadow: 0 0 10px currentColor;`}
+                  >
+                    <div class="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent animate-shimmer"></div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Featured Skills as Chips -->
+    <div class="text-center">
+      <p class="text-gray-500 font-mono text-sm mb-6">QUICK_ACCESS:</p>
+      <div class="flex flex-wrap justify-center gap-3">
+        {["HTML", "TypeScript", "React", "Node.js", "Astro", "Flutter", "Tailwind", "PostgreSQL", "Docker", "Git"].map((skill) => (
+          <div class="group relative">
+            <div class="skill-chip px-6 py-3 holo-border rounded font-mono text-sm cursor-pointer transform transition-all hover:scale-105">
+              {skill}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Alternative View: Hexagon Grid (Optional) -->
+    <!-- Uncomment below for hexagon layout -->
+    <!--
+    <div class="mt-16">
+      <h3 class="text-center text-2xl font-cyber neon-text-cyan mb-8">CORE COMPETENCIES</h3>
+      <div class="flex flex-wrap justify-center gap-4">
+        {["React", "Node.js", "TypeScript", "Python", "AWS", "Docker", "MongoDB"].map((skill) => (
+          <div class="hexagon-skill">
+            <span class="font-mono text-sm">{skill}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+
+<style>
+  .skill-chip {
+    background: linear-gradient(135deg, rgba(255, 0, 229, 0.1), rgba(0, 234, 255, 0.1));
+    border: 1px solid rgba(141, 75, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-chip::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+  }
+
+  .skill-chip:hover::before {
+    left: 100%;
+  }
+
+  .skill-chip:hover {
+    box-shadow: 0 0 20px rgba(141, 75, 255, 0.6);
+    border-color: rgba(255, 0, 229, 0.8);
+  }
+
+  @keyframes shimmer {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s infinite;
+  }
+
+  /* Hexagon skill style (optional) */
+  .hexagon-skill {
+    width: 120px;
+    height: 140px;
+    background: rgba(141, 75, 255, 0.2);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid rgba(255, 0, 229, 0.5);
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .hexagon-skill:hover {
+    background: rgba(255, 0, 229, 0.3);
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(255, 0, 229, 0.6);
+  }
+</style>

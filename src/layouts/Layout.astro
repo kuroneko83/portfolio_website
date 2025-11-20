@@ -1,0 +1,56 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Full-Stack Software Engineer | Cyberpunk Portfolio" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="crt-scanlines">
+    <!-- Background Grid -->
+    <div class="fixed inset-0 cyber-grid opacity-30 pointer-events-none"></div>
+
+    <!-- Vignette Effect -->
+    <div class="fixed inset-0 pointer-events-none" style="background: radial-gradient(circle at center, transparent 0%, rgba(10, 10, 15, 0.8) 100%);"></div>
+
+    <slot />
+
+    <script>
+      // Optional: Add retro cursor trail effect
+      document.addEventListener('mousemove', (e) => {
+        const trail = document.createElement('div');
+        trail.className = 'fixed w-1 h-1 rounded-full bg-neon-cyan pointer-events-none';
+        trail.style.left = e.pageX + 'px';
+        trail.style.top = e.pageY + 'px';
+        trail.style.boxShadow = '0 0 10px rgba(0, 234, 255, 0.8)';
+        trail.style.animation = 'fade-out 0.5s forwards';
+        document.body.appendChild(trail);
+
+        setTimeout(() => trail.remove(), 500);
+      });
+
+      // Add fade-out animation
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes fade-out {
+          to {
+            opacity: 0;
+            transform: scale(0);
+          }
+        }
+      `;
+      document.head.appendChild(style);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+---
+// HERO VARIANTS - Change the 'variant' prop to switch styles:
+// 'synthwave-sun' - Classic synthwave sunset with grid
+// 'neon-matrix' - Matrix-style falling code
+// 'cyber-portal' - Animated neon portal effect
+// 'glitch-minimal' - Minimal with glitch text
+// 'vapor-wave' - Vaporwave gradient background
+
+const variant = 'synthwave-sun'; // CHANGE THIS TO SWITCH VARIANTS
+---
+
+{variant === 'synthwave-sun' && (
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+    <!-- Synthwave Sun Background -->
+    <div class="absolute inset-0 overflow-hidden">
+      <!-- Sky Gradient -->
+      <div class="absolute inset-0 bg-gradient-to-b from-cyber-darker via-neon-purple/20 to-neon-pink/30"></div>
+
+      <!-- Sun -->
+      <div class="absolute top-1/3 left-1/2 transform -translate-x-1/2">
+        <div class="w-64 h-64 md:w-96 md:h-96 rounded-full bg-gradient-to-b from-neon-pink via-neon-orange to-neon-purple opacity-70 blur-2xl animate-pulse-slow"></div>
+        <div class="absolute inset-0 w-64 h-64 md:w-96 md:h-96 rounded-full border-4 border-neon-pink opacity-50"></div>
+      </div>
+
+      <!-- Perspective Grid -->
+      <div class="absolute bottom-0 left-0 right-0 h-96 cyber-grid-perspective opacity-40"></div>
+
+      <!-- Mountain Silhouettes (Optional) -->
+      <div class="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-cyber-darker to-transparent"></div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4">
+      <div class="mb-8">
+        <h1 class="text-6xl md:text-8xl font-display neon-text-pink mb-4 animate-glow" data-text="YOUR NAME">
+          YOUR NAME
+        </h1>
+        <div class="h-1 w-64 mx-auto bg-gradient-to-r from-transparent via-neon-cyan to-transparent"></div>
+      </div>
+
+      <p class="text-2xl md:text-4xl font-cyber neon-text-cyan mb-8 tracking-wide">
+        SOFTWARE ENGINEER
+      </p>
+
+      <p class="text-lg md:text-xl text-gray-300 mb-12 max-w-2xl mx-auto">
+        Full-Stack Developer / Cybernetic Architect / Code Samurai
+      </p>
+
+      <a href="#about" class="neon-button inline-block">
+        Enter the Network
+      </a>
+    </div>
+
+    <!-- Scroll Indicator -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div class="w-6 h-10 border-2 border-neon-cyan rounded-full flex justify-center p-2 animate-pulse">
+        <div class="w-1 h-3 bg-neon-cyan rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </section>
+)}
+
+{variant === 'neon-matrix' && (
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+    <!-- Matrix Background -->
+    <div class="absolute inset-0 bg-cyber-darker">
+      <canvas id="matrix-canvas" class="w-full h-full opacity-30"></canvas>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4">
+      <h1 class="text-7xl md:text-9xl font-display chrome-text mb-6 glitch" data-text="YOUR NAME">
+        YOUR NAME
+      </h1>
+
+      <div class="mb-8 overflow-hidden">
+        <p class="text-2xl md:text-3xl font-cyber neon-text-purple typing-text">
+          &gt; SOFTWARE_ENGINEER.EXECUTE()
+        </p>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <span class="px-4 py-2 neon-border-pink text-neon-pink text-sm font-mono">FULL-STACK</span>
+        <span class="px-4 py-2 neon-border-cyan text-neon-cyan text-sm font-mono">DEVELOPER</span>
+        <span class="px-4 py-2 neon-border-purple text-neon-purple text-sm font-mono">CREATOR</span>
+      </div>
+
+      <a href="#about" class="neon-button">
+        Access Profile
+      </a>
+    </div>
+
+    <script>
+      const canvas = document.getElementById('matrix-canvas');
+      const ctx = canvas.getContext('2d');
+
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const matrix = "ABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%";
+      const fontSize = 16;
+      const columns = canvas.width / fontSize;
+      const drops = Array(Math.floor(columns)).fill(1);
+
+      function draw() {
+        ctx.fillStyle = 'rgba(10, 10, 15, 0.04)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        ctx.fillStyle = '#0f0';
+        ctx.font = fontSize + 'px monospace';
+
+        for (let i = 0; i < drops.length; i++) {
+          const text = matrix[Math.floor(Math.random() * matrix.length)];
+          ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+          if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+            drops[i] = 0;
+          }
+          drops[i]++;
+        }
+      }
+
+      setInterval(draw, 35);
+    </script>
+  </section>
+)}
+
+{variant === 'cyber-portal' && (
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+    <!-- Portal Background -->
+    <div class="absolute inset-0 bg-cyber-darker flex items-center justify-center">
+      <div class="relative w-96 h-96">
+        <!-- Rotating Rings -->
+        <div class="absolute inset-0 border-4 border-neon-pink rounded-full animate-spin" style="animation-duration: 4s;"></div>
+        <div class="absolute inset-8 border-4 border-neon-cyan rounded-full animate-spin" style="animation-duration: 3s; animation-direction: reverse;"></div>
+        <div class="absolute inset-16 border-4 border-neon-purple rounded-full animate-spin" style="animation-duration: 5s;"></div>
+
+        <!-- Center Glow -->
+        <div class="absolute inset-0 bg-gradient-to-r from-neon-pink via-neon-purple to-neon-cyan rounded-full blur-3xl opacity-30 animate-pulse-slow"></div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4">
+      <h1 class="text-6xl md:text-8xl font-display neon-text-purple mb-6 animate-float">
+        YOUR NAME
+      </h1>
+
+      <p class="text-2xl md:text-3xl font-cyber text-neon-cyan mb-8">
+        [ SOFTWARE ENGINEER ]
+      </p>
+
+      <p class="text-lg text-gray-400 mb-12 max-w-xl mx-auto font-mono">
+        Crafting digital experiences in the neon-lit future
+      </p>
+
+      <a href="#about" class="neon-button">
+        Initialize Connection
+      </a>
+    </div>
+  </section>
+)}
+
+{variant === 'glitch-minimal' && (
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-cyber-darker" id="home">
+    <div class="text-center px-4">
+      <div class="mb-12">
+        <h1 class="text-7xl md:text-9xl font-display glitch neon-text-pink mb-4" data-text="YOUR NAME">
+          YOUR NAME
+        </h1>
+      </div>
+
+      <div class="mb-8 space-y-2">
+        <p class="text-xl md:text-2xl font-mono text-neon-cyan">
+          &gt; ROLE: <span class="neon-text-purple">SOFTWARE ENGINEER</span>
+        </p>
+        <p class="text-xl md:text-2xl font-mono text-neon-cyan">
+          &gt; STATUS: <span class="animate-flicker text-neon-pink">ONLINE</span>
+        </p>
+        <p class="text-xl md:text-2xl font-mono text-neon-cyan">
+          &gt; LEVEL: <span class="text-neon-purple">FULL-STACK</span>
+        </p>
+      </div>
+
+      <a href="#about" class="neon-button mt-8">
+        Access Terminal
+      </a>
+    </div>
+  </section>
+)}
+
+{variant === 'vapor-wave' && (
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden" id="home">
+    <!-- Vaporwave Background -->
+    <div class="absolute inset-0 vapor-gradient"></div>
+    <div class="absolute inset-0 bg-cyber-darker opacity-70"></div>
+
+    <!-- Grid Overlay -->
+    <div class="absolute inset-0 cyber-grid opacity-20"></div>
+
+    <!-- Content -->
+    <div class="relative z-10 text-center px-4">
+      <div class="holo-shimmer mb-8">
+        <h1 class="text-7xl md:text-9xl font-display chrome-text mb-4">
+          YOUR NAME
+        </h1>
+      </div>
+
+      <p class="text-3xl md:text-4xl font-cyber neon-text-cyan mb-8 tracking-widest">
+        ソフトウェアエンジニア
+      </p>
+
+      <p class="text-xl text-vapor-purple mb-12">
+        SOFTWARE ENGINEER
+      </p>
+
+      <a href="#about" class="neon-button">
+        Launch Interface
+      </a>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="absolute top-20 left-10 w-20 h-20 border-2 border-vapor-pink rounded-lg animate-float opacity-50"></div>
+    <div class="absolute bottom-32 right-16 w-16 h-16 border-2 border-vapor-blue rotate-45 animate-float opacity-50" style="animation-delay: 1s;"></div>
+  </section>
+)}
+
+<style>
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  .typing-text {
+    display: inline-block;
+    border-right: 2px solid #00eaff;
+    animation: typing 3s steps(30) infinite;
+  }
+</style>

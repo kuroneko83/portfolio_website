@@ -1,0 +1,150 @@
+---
+// About Me Component - Retro ID Card Style
+---
+
+<section class="relative py-24 px-4" id="about">
+  <div class="max-w-6xl mx-auto">
+    <!-- Section Header -->
+    <div class="mb-16 text-center">
+      <h2 class="text-5xl md:text-6xl font-display neon-text-cyan mb-4 glitch" data-text="IDENTITY.LOG">
+        IDENTITY.LOG
+      </h2>
+      <div class="h-1 w-48 mx-auto bg-gradient-to-r from-transparent via-neon-purple to-transparent"></div>
+    </div>
+
+    <!-- ID Card Container -->
+    <div class="max-w-4xl mx-auto">
+      <div class="cyber-card p-8 md:p-12 holo-border">
+        <!-- Card Header -->
+        <div class="flex items-center justify-between mb-8 pb-4 border-b border-neon-purple/30">
+          <div class="flex items-center gap-3">
+            <div class="w-3 h-3 rounded-full bg-neon-pink animate-pulse"></div>
+            <span class="font-mono text-neon-cyan text-sm">STATUS: ACTIVE</span>
+          </div>
+          <div class="font-mono text-gray-500 text-sm">ID: #2025-DEV-001</div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-8">
+          <!-- Avatar Section -->
+          <div class="md:col-span-1">
+            <div class="relative group">
+              <!-- Placeholder Avatar - Replace with your image -->
+              <div class="aspect-square rounded-lg overflow-hidden neon-border-purple relative">
+                <div class="absolute inset-0 bg-gradient-to-br from-neon-purple via-neon-pink to-neon-cyan opacity-50"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <svg class="w-24 h-24 text-neon-cyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+                  </svg>
+                </div>
+              </div>
+              <!-- Scan Line Effect -->
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-neon-cyan/20 to-transparent animate-scan pointer-events-none"></div>
+
+              <!-- Corner Brackets -->
+              <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-neon-pink"></div>
+              <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-neon-pink"></div>
+              <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-neon-pink"></div>
+              <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-neon-pink"></div>
+            </div>
+
+            <!-- Bio Stats -->
+            <div class="mt-6 space-y-3 font-mono text-sm">
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">LOCATION:</span>
+                <span class="neon-text-purple">Your City</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">ROLE:</span>
+                <span class="neon-text-cyan">Engineer</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span class="text-gray-400">LEVEL:</span>
+                <span class="neon-text-pink">Elite</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bio Content -->
+          <div class="md:col-span-2 space-y-6">
+            <!-- Terminal-style intro -->
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-dot bg-neon-pink"></div>
+                <div class="terminal-dot bg-neon-orange"></div>
+                <div class="terminal-dot bg-neon-cyan"></div>
+                <span class="ml-2 text-xs text-gray-400 font-mono">bio.sh</span>
+              </div>
+              <div class="terminal-body">
+                <p class="text-neon-cyan mb-2">&gt; cat biography.txt</p>
+                <div class="text-gray-300 space-y-4 leading-relaxed">
+                  <p>
+                    Welcome to my digital domain. I'm a <span class="neon-text-pink">software engineer</span> passionate about
+                    building innovative solutions that push the boundaries of technology.
+                  </p>
+                  <p>
+                    With expertise spanning <span class="neon-text-cyan">full-stack development</span>, I specialize in
+                    creating seamless user experiences and robust backend architectures. My toolkit includes modern
+                    frameworks and cutting-edge technologies.
+                  </p>
+                  <p>
+                    When I'm not coding, you'll find me exploring the latest tech trends, contributing to open-source
+                    projects, or diving deep into <span class="neon-text-purple">emerging technologies</span>.
+                  </p>
+                </div>
+                <p class="text-neon-cyan mt-4 animate-flicker">&gt; _</p>
+              </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="grid grid-cols-3 gap-4">
+              <div class="text-center p-4 cyber-card">
+                <div class="text-3xl font-display neon-text-pink mb-2">5+</div>
+                <div class="text-xs text-gray-400 font-mono">YEARS EXP</div>
+              </div>
+              <div class="text-center p-4 cyber-card">
+                <div class="text-3xl font-display neon-text-cyan mb-2">50+</div>
+                <div class="text-xs text-gray-400 font-mono">PROJECTS</div>
+              </div>
+              <div class="text-center p-4 cyber-card">
+                <div class="text-3xl font-display neon-text-purple mb-2">∞</div>
+                <div class="text-xs text-gray-400 font-mono">LEARNING</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Fields (Editable) -->
+        <div class="grid md:grid-cols-2 gap-4 pt-8 border-t border-neon-purple/30">
+          <div class="font-mono text-sm">
+            <span class="text-gray-500">SPECIALIZATION:</span>
+            <span class="ml-2 text-neon-cyan">Full-Stack Development</span>
+          </div>
+          <div class="font-mono text-sm">
+            <span class="text-gray-500">INTERESTS:</span>
+            <span class="ml-2 text-neon-purple">AI, Web3, Gaming</span>
+          </div>
+          <div class="font-mono text-sm">
+            <span class="text-gray-500">CURRENT_FOCUS:</span>
+            <span class="ml-2 text-neon-pink">Building the Future</span>
+          </div>
+          <div class="font-mono text-sm">
+            <span class="text-gray-500">AVAILABILITY:</span>
+            <span class="ml-2 text-green-400 animate-pulse">● Available for Projects</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Custom scan animation for avatar */
+  @keyframes scan {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(100%);
+    }
+  }
+</style>
