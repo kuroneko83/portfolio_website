@@ -4,29 +4,26 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Synthwave Palette (Default)
-        'neon-pink': '#ff00e5',
-        'neon-cyan': '#00eaff',
-        'neon-purple': '#8d4bff',
-        'neon-blue': '#0084ff',
-        'neon-orange': '#ff6b00',
-        'cyber-dark': '#0a0a0f',
-        'cyber-darker': '#050508',
-        'cyber-gray': '#1a1a2e',
+        // Dark Terminal Green Palette
+        'neon-pink': '#00d000',      // Dark terminal green
+        'neon-cyan': '#00b000',      // Darker terminal green
+        'neon-purple': '#009000',    // Very dark green
+        'neon-blue': '#00c000',      // Mid-dark green
+        'neon-orange': '#00a000',    // Muted dark green
+        'cyber-dark': '#0a0f0a',     // Very dark green-tinted black
+        'cyber-darker': '#050805',   // Almost black with green tint
+        'cyber-gray': '#0f1a0f',     // Darker gray-green
 
-        // Cyberpunk Noir Palette
-        'noir-pink': '#ff0080',
-        'noir-cyan': '#00ffff',
-        'noir-purple': '#9d00ff',
-        'noir-green': '#00ff41',
-        'noir-red': '#ff0033',
+        // Additional Green Shades
+        'matrix-green': '#00cc00',   // Traditional terminal green
+        'emerald': '#059669',        // Deep emerald
+        'jade': '#047857',           // Dark jade
+        'forest': '#065f46',         // Deep forest green
+        'mint': '#10b981',           // Muted mint
 
-        // Vaporwave Pastel Palette
-        'vapor-pink': '#ff6ad5',
-        'vapor-purple': '#c774e8',
-        'vapor-blue': '#94d0ff',
-        'vapor-mint': '#8ce8c4',
-        'vapor-peach': '#ffb3d9'
+        // Accent colors (very subdued)
+        'accent-teal': '#0d9488',    // Dark teal
+        'accent-lime': '#65a30d'     // Muted lime
       },
       fontFamily: {
         'cyber': ['Orbitron', 'monospace'],

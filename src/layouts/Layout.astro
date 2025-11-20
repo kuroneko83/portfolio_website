@@ -15,6 +15,12 @@ const { title, description = "Full-Stack Software Engineer | Cyberpunk Portfolio
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+
+    <!-- Preload Critical Fonts to Prevent FOUC -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Share+Tech+Mono&family=Audiowide&display=swap" rel="stylesheet" />
+
     <title>{title}</title>
   </head>
   <body class="crt-scanlines">
@@ -27,13 +33,13 @@ const { title, description = "Full-Stack Software Engineer | Cyberpunk Portfolio
     <slot />
 
     <script>
-      // Optional: Add retro cursor trail effect
+      // Optional: Add retro cursor trail effect - Dark Green Theme
       document.addEventListener('mousemove', (e) => {
         const trail = document.createElement('div');
         trail.className = 'fixed w-1 h-1 rounded-full bg-neon-cyan pointer-events-none';
         trail.style.left = e.pageX + 'px';
         trail.style.top = e.pageY + 'px';
-        trail.style.boxShadow = '0 0 10px rgba(0, 234, 255, 0.8)';
+        trail.style.boxShadow = '0 0 8px rgba(0, 176, 0, 0.6)';
         trail.style.animation = 'fade-out 0.5s forwards';
         document.body.appendChild(trail);
 
